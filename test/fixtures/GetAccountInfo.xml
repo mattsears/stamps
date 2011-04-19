@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/"
+               xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+               xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GetAccountInfoResponse xmlns="http://stamps.com/xml/namespace/2010/11/swsim/swsimv12">
+      <Authenticator>oGharDxWAu9bK3WBDMHLYZs5aa4=</Authenticator>
+      <AccountInfo>
+        <CustomerID>1111111</CustomerID>
+        <MeterNumber>3333333</MeterNumber>
+        <UserID>1111111</UserID>
+        <PostageBalance>
+          <AvailablePostage>10.0000</AvailablePostage>
+          <ControlTotal>100.0000</ControlTotal>
+        </PostageBalance>
+        <MaxPostageBalance>500</MaxPostageBalance>
+        <LPOCity>Los Angeles</LPOCity>
+        <LPOState>CA</LPOState>
+        <LPOZip>91501</LPOZip>
+        <CorpID>0</CorpID>
+        <StoreID>758901397</StoreID>
+        <CostCodeLimit>0</CostCodeLimit>
+        <MeterBalanceLimit>0</MeterBalanceLimit>
+        <MonthlyPostagePurchaseLimit>0</MonthlyPostagePurchaseLimit>
+        <MaxUsers>3</MaxUsers><Capabilities>
+        <CanPrintShipping>true</CanPrintShipping>
+        <CanUseCostCodes>true</CanUseCostCodes>
+        <CanUseHiddenPostage>true</CanUseHiddenPostage>
+        <CanPurchaseSDCInsurance>true</CanPurchaseSDCInsurance>
+        <CanPrintMemoOnShippingLabel>true</CanPrintMemoOnShippingLabel>
+        <CanPrintInternational>true</CanPrintInternational>
+        <CanPurchasePostage>true</CanPurchasePostage>
+        <CanEditCostCodes>true</CanEditCostCodes>
+        <MustUseCostCodes>false</MustUseCostCodes>
+        <CanViewOnlineReports>true</CanViewOnlineReports>
+        <PerPrintLimit>922337203685477.5807</PerPrintLimit>
+        <AllowAllMailClasses>true</AllowAllMailClasses>
+        <CanPrintReturnShippingLabel>true</CanPrintReturnShippingLabel>
+        <CanManageUsers>true</CanManageUsers>
+        <CanPrintNetStamps>true</CanPrintNetStamps>
+        <CanEmailNotifications>true</CanEmailNotifications>
+        <CanViewReports>true</CanViewReports>
+        <CanCreateSCANForm>true</CanCreateSCANForm>
+        <AllowRestrictedSheets>true</AllowRestrictedSheets>
+        <HideUnavailableFeatures>false</HideUnavailableFeatures>
+        <WebPostage>false</WebPostage>
+        <CanViewInsuranceHistory>true</CanViewInsuranceHistory>
+        <CanChangeServicePlan>true</CanChangeServicePlan>
+        <HideEstimatedDeliveryTime>false</HideEstimatedDeliveryTime>
+        <CanPurchaseFromStore>true</CanPurchaseFromStore>
+        <CanChangePhysicalAddress>true</CanChangePhysicalAddress>
+        <CanChangePaymentMethod>true</CanChangePaymentMethod>
+        <CanChangeContactInfo>true</CanChangeContactInfo>
+        <CanViewAdvancedReporting>true</CanViewAdvancedReporting>
+      </Capabilities>
+      <MeterPhysicalAddress>
+        <FirstName>Matt</FirstName>
+        <MiddleName />
+        <LastName>Sample</LastName>
+        <Company>bigecommerce.com</Company>
+        <Address1>123 Mockingbird Lane</Address1>
+        <City>New York</City>
+        <State>NY</State>
+        <ZIPCode>10009</ZIPCode>
+        <ZIPCodeAddOn></ZIPCodeAddOn>
+        <DPB></DPB><CheckDigit>
+      </CheckDigit>
+      </MeterPhysicalAddress>
+      <ResubmitStatus>NOT_IN_RESUBMISSION</ResubmitStatus>
+      </AccountInfo>
+      <Address>
+        <FirstName>Matt</FirstName>
+        <MiddleName />
+        <LastName>Sears</LastName>
+        <Title />
+        <Company>Big Ecommerce Company</Company>
+        <Address1>123 Mockingbird Lane Ste 234</Address1>
+        <City>New York</City>
+        <State>NY</State>
+        <ZIPCode>10009</ZIPCode>
+        <ZIPCodeAddOn />
+        <PhoneNumber>9365551234</PhoneNumber>
+      </Address>
+      <CustomerEmail>matt@bigecommercesite.com</CustomerEmail>
+    </GetAccountInfoResponse>
+  </soap:Body>
+</soap:Envelope>

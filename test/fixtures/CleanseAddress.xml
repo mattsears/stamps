@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CleanseAddressResponse xmlns="http://stamps.com/xml/namespace/2010/11/swsim/swsimv12">
+      <Authenticator>ZVk2fjKAIR8AgCYYo+3EQuylEHg=</Authenticator>
+      <Address>
+        <FullName>MATT SEARS</FullName>
+        <Address1>123 MOCKINGBIRD LANE</Address1>
+        <Address2 />
+        <City>NEW YORK</City>
+        <State>NY</State>
+        <ZIPCode>11111</ZIPCode>
+        <ZIPCodeAddOn>222</ZIPCodeAddOn>
+        <DPB>06</DPB>
+        <CheckDigit>5</CheckDigit>
+        <Urbanization />
+        <CleanseHash>W9pHbVsNIdYE8/B6SyQ4wOkIIr9kZWFkYmVlZg==20110713</CleanseHash>
+        <OverrideHash>PxU7xsTh5+lebMpE9IcjOWQS0alkZWFkYmVlZg==20110713</OverrideHash>
+      </Address>
+      <AddressMatch>true</AddressMatch>
+      <CityStateZipOK>true</CityStateZipOK>
+    </CleanseAddressResponse>
+  </soap:Body>
+</soap:Envelope>

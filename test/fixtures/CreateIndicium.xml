@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <CreateIndiciumResponse xmlns="http://stamps.com/xml/namespace/2010/11/swsim/swsimv12">
+      <Authenticator>SfOQgTEPIqQRO6ZgZvfcegLDUzA=</Authenticator>
+      <IntegratorTxID>1234567890ABCDEF</IntegratorTxID>
+      <Rate>
+        <FromZIPCode>10008</FromZIPCode>
+        <ToZIPCode>45458</ToZIPCode>
+        <Amount>2.07</Amount>
+        <ServiceType>US-FC</ServiceType>
+        <PrintLayout>Untrackable</PrintLayout>
+        <DeliverDays>1</DeliverDays>
+        <WeightLb>0.5</WeightLb>
+        <PackageType>Large Envelope or Flat</PackageType>
+        <ShipDate>2011-04-07</ShipDate>
+        <DimWeighting>N</DimWeighting>
+        <EffectiveWeightInOunces>8</EffectiveWeightInOunces>
+        <IsIntraBMC>true</IsIntraBMC>
+        <Zone>1</Zone>
+        <RateCategory>268959776</RateCategory>
+      </Rate>
+      <StampsTxID>fa7618c4-013c-4e5f-b42e-7591dd55bea6</StampsTxID>
+      <URL>https://swsim.testing.example.com.com/Label/label.ashx/label-200-r90.png</URL>
+      <PostageBalance>
+        <AvailablePostage>5.8600</AvailablePostage>
+        <ControlTotal>10.00</ControlTotal>
+      </PostageBalance>
+      <Mac>KDTpVEcj3SyynhawyTYT1ikB5IE=</Mac>
+    </CreateIndiciumResponse>
+  </soap:Body>
+</soap:Envelope>

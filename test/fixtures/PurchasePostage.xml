@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <PurchasePostageResponse xmlns="http://stamps.com/xml/namespace/2010/11/swsim/swsimv12">
+      <Authenticator>AlLpXHensVNYPEHFaG8OS+kNd/4=</Authenticator>
+      <PurchaseStatus>Pending</PurchaseStatus>
+      <TransactionID>66919357</TransactionID>
+      <PostageBalance>
+        <AvailablePostage>23.4300</AvailablePostage>
+        <ControlTotal>60.00</ControlTotal>
+      </PostageBalance>
+      <RejectionReason>order being processed</RejectionReason>
+      <MIRequired>false</MIRequired>
+    </PurchasePostageResponse>
+  </soap:Body>
+</soap:Envelope>
