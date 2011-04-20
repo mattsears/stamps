@@ -18,15 +18,16 @@ module Stamps
       'Large Package',
       'Oversized Package'].freeze
 
-    SERVICE = [
-      ['USPS First-Class Mail', 'US-FC', ],
-      ['USPS Media Mail', 'US-MM'],
-      ['USPS Parcel Post', 'US-PP'],
-      ['USPS Priority Mail', 'US-PM'],
-      ['USPS Express Mail', 'US-XM'],
-      ['USPS Express Mail International','US-EMI'],
-      ['USPS Priority Mail International', 'US-PMI'],
-      ['USPS First Class Mail International', 'US-FCI']].freeze
+    SERVICE = {
+      'US-FC'  => 'USPS First-Class Mail',
+      'US-MM'  => 'USPS Media Mail',
+      'US-PP'  => 'USPS Parcel Post',
+      'US-PM'  => 'USPS Priority Mail',
+      'US-XM'  => 'USPS Express Mail',
+      'US-EMI' => 'USPS Express Mail International',
+      'US-PMI' => 'USPS Priority Mail International',
+      'US-FCI' => 'USPS First Class Mail International'
+    }
 
     ADD_ONS = {
       'SC-A-HP'    => 'Hidden Postage',
