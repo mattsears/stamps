@@ -8,10 +8,41 @@ calculate the shipping cost of packages, standardize domestic
 addresses via USPS CASS certified Address Matching Software, and track
 shipments.
 
+Features
+----------
+
+1. Generates the postage stamp based on the shipping information
+provided.
+
+2. Cancel postage stamp requests.
+
+3. User account authentication.
+
+4. Standardizes shipping address that complies with the USPS address
+formatting guidelines.
+
+5. Validates city, state, and postal code combinations.
+
+6. Request USPS  to pick up mail pieces from a specified location.
+
+7. Purchase postage.
+
+8. Calculate shipping rates based on distance and package weight.
+
+In Process
+----------
+
+1. Track shipments
+
+2. Register new accounts
+
+3. Password resets
+
+
 Pre-requisites
 ----------
 Register for the Stamps.com [Developer
-Program](http://developer.stamps.com/developer) to receive you free
+Program](http://developer.stamps.com/developer) to receive a free
 test account.
 
 Sample Workflow
