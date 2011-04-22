@@ -3,10 +3,6 @@ Bundler.setup
 
 require 'simplecov'
 SimpleCov.merge_timeout 3600
-SimpleCov.start do
-  add_group 'Stamps', 'lib/stamps'
-  add_group 'Faraday Middleware', 'lib/faraday'
-end
 
 require 'mocha'
 require 'test/unit'
@@ -33,9 +29,10 @@ Stamps.configure do |config|
 end
 
 # Stub requests
-def stub_post(web_method)
+def stub_post(web_method, soap_action = nil)
+  soap_action = web_method if soap_action.nil?
   stub_request(:post, Stamps.endpoint).
-    with(:headers => {"SoapAction" => "#{Stamps.namespace}/#{web_method}"}).
+    with(:headers => {"SoapAction" => "#{Stamps.namespace}/#{soap_action}"}).
     to_return(:body => fixture("#{web_method}.xml"))
 end
 
