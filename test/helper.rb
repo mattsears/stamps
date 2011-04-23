@@ -11,12 +11,14 @@ require 'shoulda'
 require 'webmock/test_unit'
 require 'json'
 require 'multi_json'
+require 'awesome_print'
 
 Stamps.configure do |config|
   config.integration_id = 'XXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXX'
   config.username       = 'USERNAME'
   config.password       = 'PASSXXXX'
   config.endpoint       = 'https://stamps.example.com/swsim/swsimv12.asmx'
+  config.format         = :hashie
   config.return_address  = {
     :full_name    => 'Big E-commerce Company',
     :address1     => '500 Wall Street',

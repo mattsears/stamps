@@ -8,7 +8,9 @@ module Hashie
     end
 
     # Use a n Array instead of a set since order is important
+    # TODO:  Look at https://github.com/ahoward/map
     instance_variable_set('@properties', Array.new)
+
 
     # Sort the hash by the order in which the properties are declared
     def to_hash
@@ -22,6 +24,6 @@ module Hashie
       end
       out
     end
-  end
 
+  end
 end
