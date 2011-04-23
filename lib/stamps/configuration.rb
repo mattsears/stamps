@@ -22,7 +22,7 @@ module Stamps
     DEFAULT_NAMESPACE = 'http://stamps.com/xml/namespace/2010/11/swsim/swsimv12'
 
     # @note JSON is preferred over XML because it is more concise and faster to parse.
-    DEFAULT_FORMAT = nil
+    DEFAULT_FORMAT = :hash
 
     # The user agent that will be sent to the API endpoint if none is set
     DEFAULT_USER_AGENT = "Stamps Ruby Gem".freeze
