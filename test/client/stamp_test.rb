@@ -45,7 +45,7 @@ class StampTest < Test::Unit::TestCase
 
       setup do
         stub_post('TrackShipment')
-        @track = Stamps.track(:stamps_transaction_id => '342343243243')
+        @track = Stamps.track('342343243243')
       end
 
       should 'return an list of tracking events' do

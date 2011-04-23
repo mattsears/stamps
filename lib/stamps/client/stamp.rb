@@ -47,10 +47,11 @@ module Stamps
 
       # Returns an array of tracking events
       #
-      # @param [Hash] authenticator
+      # @param [String] the transaction id of the stamp
       #
-      def track(params = {})
+      def track(stamps_transaction_id)
         params[:authenticator] = authenticator_token unless params[:authenticator]
+        params[:stamps_transaction_id] = stamps_transaction_id
         response = request('TrackShipment', Stamps::Mapping::TrackShipment.new(params))
         return response[:track_shipment_response] if response.errors.empty?
         response
