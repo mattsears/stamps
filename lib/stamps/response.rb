@@ -21,7 +21,7 @@ module Stamps
     def to_hash
       self.hash.merge!(:errors => self.errors)
       self.hash.merge!(:valid? => self.valid)
-      Hashie::Mash.new(@hash)
+      Stamps.format.to_s.downcase == 'hashie' ? Hashie::Mash.new(@hash) : self.hash
     end
 
     def format_defaults

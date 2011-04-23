@@ -19,7 +19,7 @@ class StampsTest < Test::Unit::TestCase
       end
 
       should 'assign the amount for a given rate' do
-        assert_equal "2.41", @rates.first.amount
+        assert_equal '2.41', @rates.first.amount
       end
 
     end
@@ -31,8 +31,12 @@ class StampsTest < Test::Unit::TestCase
         @rate = Stamps.get_rate
       end
 
-      should 'return an Hashie::Mash for the single rate' do
+      should 'return an hash for the single rate' do
         assert_equal Hashie::Mash, @rate.class
+      end
+
+      should 'return an array of addons' do
+        assert_equal Hashie::Mash, @rate[:add_ons].class
       end
 
     end

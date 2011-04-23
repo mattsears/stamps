@@ -29,11 +29,8 @@ module Stamps
       def create!(params = {})
         params[:authenticator] = authenticator_token unless params[:authenticator]
         params[:from] ||= Hash.new
-
         response = request('CreateIndicium', Stamps::Mapping::Stamp.new(params))
-        if response.errors.empty?
-          return response[:create_indicium_response]
-        end
+        return response[:create_indicium_response] if response.errors.empty?
         response
       end
 
@@ -44,6 +41,18 @@ module Stamps
       def cancel!(params = {})
         params[:authenticator] = authenticator_token unless params[:authenticator]
         response = request('CancelIndicium', Stamps::Mapping::CancelStamp.new(params))
+        return response[:cancel_indicium_response] if response.errors.empty?
+        response
+      end
+
+      # Returns an array of tracking events
+      #
+      # @param [Hash] authenticator
+      #
+      def track(params = {})
+        params[:authenticator] = authenticator_token unless params[:authenticator]
+        response = request('TrackShipment', Stamps::Mapping::TrackShipment.new(params))
+        return response[:track_shipment_response] if response.errors.empty?
         response
       end
 

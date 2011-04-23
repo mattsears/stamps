@@ -25,16 +25,12 @@ module Stamps
           :rate          => Stamps::Mapping::Rate.new(params)
         })
         response = request('GetRates', rates)
-        if response.valid?
-          return [response[:get_rates_response][:rates][:rate]].flatten
-        end
-        response
+        response[:get_rates_response].nil? ? response : [response[:get_rates_response][:rates][:rate]].flatten
       end
 
       def get_rate(params = {})
         rates  = get_rates(params)
-        return rates.first if rates.is_a?(Array)
-        rates
+        rates.is_a?(Array) ? rates.first : rates
       end
 
     end

@@ -238,5 +238,10 @@ module Stamps
       property :CountryOfOrigin, :from => :country_of_origin
     end
 
+    class TrackShipment < Hashie::Trash
+      property :Authenticator, :from => :authenticator
+      property :StampsTxID,    :from => :stamps_transaction_id
+    end
+
   end
 end
