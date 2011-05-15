@@ -21,7 +21,6 @@ Stamps.configure do |config|
   config.username       = 'USERNAME'
   config.password       = 'PASSXXXX'
   config.endpoint       = 'https://stamps.example.com/swsim/swsimv12.asmx'
-  config.format         = :hashie
   config.return_address  = {
     :full_name    => 'Big E-commerce Company',
     :address1     => '500 Wall Street',

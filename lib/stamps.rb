@@ -14,6 +14,7 @@ module Stamps
   # Alias for Stamps::Client.new
   #
   # @return [Stamps::Client]
+  #
   def self.client(options={})
     Stamps::Client.new(options)
   end

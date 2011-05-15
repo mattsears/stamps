@@ -8,10 +8,11 @@ module Stamps
 
     # Expects an <tt>Savon::SOAP::Response</tt> and handles errors.
     def initialize(response)
+      self.errors = []
+      self.valid = true
       self.savon  = response
       self.http   = response.http
-      self.hash = self.savon.to_hash
-      self.format_defaults
+      self.hash   = self.savon.to_hash
       raise_errors
     end
 
@@ -22,14 +23,10 @@ module Stamps
       self.hash.merge!(:errors => self.errors)
       self.hash.merge!(:valid? => self.valid)
       self.hash
-      #Stamps.format.to_s.downcase == 'hashie' ? Hashie::Mash.new(@hash) : self.hash
+      Stamps.format.to_s.downcase == 'hashie' ? Hashie::Mash.new(@hash) : self.hash
     end
 
-    def format_defaults
-      self.errors = []
-      self.valid = true
-    end
-
+    # Um, there's gotta be a better way
     def valid?
       self.valid
     end
