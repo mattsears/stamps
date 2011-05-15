@@ -9,8 +9,8 @@ Gem::Specification.new do |s|
   s.authors     = ["Matt Sears"]
   s.email       = ["matt@mattsears.com"]
   s.homepage    = "http://rubygems.org/gems/stamps"
-  s.summary     = %q{Multi-provider online stamp API client}
-  s.description = %q{Stamps makes it easy to create postage using multi-provider online stamp apis}
+  s.summary     = %q{Ruby wrapper for the Stamps.com Web Services API}
+  s.description = %q{Stamps is Stamps.com backed library for creating postage labels, calculate the shipping cost of packages, standardize domestic addresses via USPS CASS certified Address Matching Software, and track shipments.}
 
   s.rubyforge_project = "stamps"
 
