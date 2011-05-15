@@ -1,43 +1,28 @@
 Stamps
 ==========
 
-** Work in Progress **
-
-Stamps is Stamps.com backed library for creating shipping labels,
+Stamps is Stamps.com backed library for creating postage labels,
 calculate the shipping cost of packages, standardize domestic
 addresses via USPS CASS certified Address Matching Software, and track
 shipments.
 
-Features
+Main Features
 ----------
 
-1. Generates the postage stamp based on the shipping information
-provided.
+1. Create postage stamp labels in png and pdf formats.
 
-2. Cancel postage stamp requests.
-
-3. User account authentication.
-
-4. Standardizes shipping address that complies with the USPS address
+2. Standardizes shipping address that complies with the USPS address
 formatting guidelines.
 
-5. Validates city, state, and postal code combinations.
+3. Validates city, state, and postal code combinations.
 
-6. Request USPS  to pick up mail pieces from a specified location.
+4. Calculate shipping rates based on distance and package weight.
+
+5. Request USPS carrier pick ups.
+
+6. Track shipment history.
 
 7. Purchase postage.
-
-8. Calculate shipping rates based on distance and package weight.
-
-In Process
-----------
-
-1. Track shipments
-
-2. Register new accounts
-
-3. Password resets
-
 
 Pre-requisites
 ----------
@@ -136,11 +121,59 @@ Now we can view or print the postage label:
 
     stamp.url
 
-Installation Stamps
+General Configuration
 ----------
-First install the gem
+If you want to see the data logged to and from the api:
+
+    Stamps.configure do |config|
+      config.log_messages = true
+    end
+
+By default Stamps will return responses as a Hash.  To make Stamps
+return a Hashie instead:
+
+    Stamps.configure do |config|
+      config.format = :hashie
+    end
+
+A return address can be specified in the configuration block as
+well. This address will be used when the :from address is not specified
+when creating new stamps
+
+    Stamps.configure do |config|
+      config.return_address = {
+        :full_name    => 'Littlelines',
+        :address1     => '50 Chestnut Street',
+        :address2     => 'Suite 234',
+        :city         => 'Beavercreek',
+        :state        => 'OH',
+        :zip_code     => '45440',
+        :phone_number => '9375545027'
+      }
+    end
+
+Installation Steps
+----------
+First install the gem:
 
     gem install stamps
+
+Add it to your Gemfile:
+
+    gem 'stamps'
+
+Development
+-----------
+
+* Source hosted at [GitHub](https://github.com/mattsears/stamps).
+* Report Issues/Questions/Feature requests on [GitHub Issues](https://github.com/mattsears/stamps/issues).
+
+Pull requests are very welcome! Make sure your patches are well tested. Please create a topic branch for every separate change
+you make.
+
+Author
+------
+[Matt Sears](https://github.com/mattsears)
 
 
 
