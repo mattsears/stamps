@@ -27,7 +27,7 @@ module Stamps
       def carrier_pickup(params = {})
         params[:authenticator] = authenticator_token
         response = request('CarrierPickup', Stamps::Mapping::CarrierPickup.new(params))
-        response
+        response[:carrier_pickup_response] if response
       end
 
     end

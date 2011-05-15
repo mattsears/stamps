@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Client</faultcode>
+      <faultstring>Invalid SOAP message due to XML Schema validation failure. The 'http://stamps.com/xml/namespace/2010/11/swsim/swsimv12:ServiceType' element is invalid - The value 'US-KI' is invalid according to its datatype 'http://stamps.com/xml/namespace/2010/11/swsim/swsimv12:ServiceType' - The Enumeration constraint failed.</faultstring>
+      <faultactor>https://swsim.testing.stamps.com/swsim/swsimv12.asmx</faultactor>
+      <detail>
+        <stamps_exception code="00490102" xmlns="http://stamps.com/xml/namespace/2008/02/stamps/fault" />
+      </detail>
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>

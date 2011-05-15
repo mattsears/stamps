@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <soap:Fault>
+      <faultcode>soap:Server</faultcode>
+      <faultstring>Insufficient Postage</faultstring>
+      <faultactor>https://swsim.testing.stamps.com/swsim/swsimv12.asmx</faultactor>
+      <detail>
+        <sdcerror code="80040414" xmlns="http://stamps.com/xml/namespace/2008/01/fault">Insufficient Postage</sdcerror>
+        <authenticator xmlns="http://stamps.com/xml/namespace/2008/01/fault">exp=1305501129&amp;uid=2745084&amp;cty=swsim&amp;ctk=c95RLEdT0mD2bvRUvdvrkFegFU0=&amp;iid=J877UP/dP0qTQCRj3F421g==&amp;rsid=0&amp;eac=1820294591&amp;eacx=194559&amp;rrsid=0&amp;raid=0&amp;resellerid=0&amp;mac=rp93YQqG1Kix/+RAhddzSv4M4PM=</authenticator>
+      </detail>
+    </soap:Fault>
+  </soap:Body>
+</soap:Envelope>

@@ -15,18 +15,23 @@ module Stamps
       raise_errors
     end
 
-    attr_accessor :savon, :http, :errors, :valid, :hash
+    attr_accessor :savon, :http, :errors, :valid, :hash, :code
 
     # Returns the SOAP response body as a Hash.
     def to_hash
       self.hash.merge!(:errors => self.errors)
       self.hash.merge!(:valid? => self.valid)
-      Stamps.format.to_s.downcase == 'hashie' ? Hashie::Mash.new(@hash) : self.hash
+      self.hash
+      #Stamps.format.to_s.downcase == 'hashie' ? Hashie::Mash.new(@hash) : self.hash
     end
 
     def format_defaults
       self.errors = []
       self.valid = true
+    end
+
+    def valid?
+      self.valid
     end
 
     # Process any errors we get back from the service.
@@ -54,8 +59,6 @@ module Stamps
         raise InternalServerError, "Stamps.com had an internal error. (#{http.code}): #{message}"
       when 502..503
         raise ServiceUnavailable, "(#{http.code}): #{message}"
-      else
-        puts "FIXME:  What other types of errors fall through? #{self}"
       end
     end
 

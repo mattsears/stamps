@@ -64,11 +64,5 @@ module Stamps
       'Other'                 => 'Other Location'
     }
 
-    class Stamps::Types::Package
-      def self.parse
-        wsdl = File.expand_path("../swsimv12.wsdl", __FILE__)
-        Savon::WSDL::Document.new(nil, wsdl).element_form_default
-      end
-    end
   end
 end

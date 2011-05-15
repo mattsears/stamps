@@ -1,7 +1,9 @@
 require 'hashie'
+require 'savon'
 require File.expand_path('../response', __FILE__)
 
 module Stamps
+
   # Defines HTTP request methods
   module Request
 
@@ -11,6 +13,7 @@ module Stamps
         wsdl.endpoint = self.endpoint
         wsdl.namespace = self.namespace
       end
+
       response = client.request :tns, web_method do
         http.headers = { "SoapAction" => formatted_soap_action(web_method) }
         soap.namespace = 'tns'

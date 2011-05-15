@@ -9,18 +9,25 @@ class AddressTest < Test::Unit::TestCase
     context 'with valid data' do
       setup do
         stub_post('CleanseAddress')
-        @address = Stamps.clean_address
+        @address = Stamps.clean_address(
+           :address => {
+             :full_name    => 'Matt Sears'
+           }
+        )
       end
+
       should 'return the clean address' do
-        assert_equal 'MATT SEARS', @address.address.full_name
-        assert_equal 'MATT SEARS', @address.address.full_name
+        assert_equal 'MATT SEARS', @address[:address][:full_name]
+        assert_equal 'MATT SEARS', @address[:address][:full_name]
       end
+
       should 'return a cleanse hash' do
-        assert @address.address.cleanse_hash
+        assert 'W9pHbVsNIdYE8/B6SyQ4wOkIIr9kZWFkYmVlZg==20110713', @address[:address][:cleanse_hash]
       end
+
       should 'indicate if the address match' do
-        assert @address.address_match
-        assert @address.city_state_zip_ok
+        assert @address[:address_match]
+        assert @address[:city_state_zip_ok]
       end
     end
 
