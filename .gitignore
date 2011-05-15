@@ -3,3 +3,5 @@ pkg/*
 *.gem
 .bundle
 runner.rb
+.yardoc/*
+doc/*

@@ -1,8 +1,10 @@
 require File.expand_path('../request', __FILE__)
 
 module Stamps
+
   # @private
   class API
+
     # @private
     attr_accessor *Configuration::VALID_OPTIONS_KEYS
 

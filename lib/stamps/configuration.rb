@@ -2,7 +2,7 @@ module Stamps
   # Defines constants and methods related to configuration
   module Configuration
 
-    # An array of valid keys in the options hash when configuring a {Twitter::API}
+    # An array of valid keys in the options hash when configuring a {Stamps::API}
     VALID_OPTIONS_KEYS = [
       :integration_id,
       :username,

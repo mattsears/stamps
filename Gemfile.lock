@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    stamps (0.0.1)
+    stamps (0.2.0)
       hashie (~> 1.0.0)
       httpi (= 0.7.9)
       json (~> 1.5.1)
@@ -13,9 +13,10 @@ GEM
   specs:
     addressable (2.2.4)
     awesome_print (0.3.2)
-    builder (2.1.2)
+    bluecloth (2.1.0)
+    builder (3.0.0)
     crack (0.1.8)
-    gyoku (0.4.2)
+    gyoku (0.4.4)
       builder (>= 2.1.2)
     hashie (1.0.0)
     httpi (0.7.9)
@@ -23,12 +24,15 @@ GEM
     json (1.5.1)
     mocha (0.9.12)
     multi_json (0.0.5)
+    nokogiri (1.4.4)
+    nori (0.2.1)
     rack (1.2.2)
-    savon (0.8.6)
+    savon (0.9.2)
       builder (>= 2.1.2)
-      crack (~> 0.1.8)
-      gyoku (>= 0.3.0)
+      gyoku (>= 0.4.0)
       httpi (>= 0.7.8)
+      nokogiri (>= 1.4.0)
+      nori (>= 0.2.0)
     shoulda (2.11.3)
     simplecov (0.4.1)
       simplecov-html (~> 0.4.3)
@@ -36,14 +40,17 @@ GEM
     webmock (1.6.2)
       addressable (>= 2.2.2)
       crack (>= 0.1.7)
+    yard (0.6.8)
 
 PLATFORMS
   ruby
 
 DEPENDENCIES
   awesome_print
+  bluecloth
   mocha (~> 0.9.11)
   shoulda (~> 2.11.3)
   simplecov (~> 0.4.0)
   stamps!
   webmock (~> 1.6.2)
+  yard
