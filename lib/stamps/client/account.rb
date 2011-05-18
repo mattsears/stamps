@@ -10,7 +10,7 @@ module Stamps
       def account(params = {})
         params[:authenticator] = authenticator_token
         response = request('GetAccountInfo', Stamps::Mapping::Account.new(params) )
-        response[:get_account_info_response][:account_info] if response
+        response[:errors].empty? ? response[:get_account_info_response][:account_info] : response
       end
 
       # Add funds to postage account
@@ -18,7 +18,7 @@ module Stamps
       def purchase_postage(params = {})
         params[:authenticator] = authenticator_token
         response = request('PurchasePostage', Stamps::Mapping::PurchasePostage.new(params))
-        response[:purchase_postage_response] if response
+        response[:errors].empty? ? response[:purchase_postage_response] : response
       end
 
       # Request carrier pickup
@@ -27,7 +27,7 @@ module Stamps
       def carrier_pickup(params = {})
         params[:authenticator] = authenticator_token
         response = request('CarrierPickup', Stamps::Mapping::CarrierPickup.new(params))
-        response[:carrier_pickup_response] if response
+        response[:errors].empty? ?  response[:carrier_pickup_response] : response
       end
 
     end
