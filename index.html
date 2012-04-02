@@ -1,0 +1,211 @@
+<!doctype html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+    <title>Stamps by mattsears</title>
+    
+    <link rel="stylesheet" href="stylesheets/styles.css">
+    <link rel="stylesheet" href="stylesheets/pygment_trac.css">
+    <script src="javascripts/scale.fix.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
+    <!--[if lt IE 9]>
+    <script src="//html5shiv.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+  </head>
+  <body>
+    <div class="wrapper">
+      <header>
+        <h1>Stamps</h1>
+        <p>Print stamps with Ruby! </p>
+        <p class="view"><a href="https://github.com/mattsears/stamps">View the Project on GitHub <small>mattsears/stamps</small></a></p>
+        <ul>
+          <li><a href="https://github.com/mattsears/stamps/zipball/master">Download <strong>ZIP File</strong></a></li>
+          <li><a href="https://github.com/mattsears/stamps/tarball/master">Download <strong>TAR Ball</strong></a></li>
+          <li><a href="https://github.com/mattsears/stamps">Fork On <strong>GitHub</strong></a></li>
+        </ul>
+      </header>
+      <section>
+        <h1>Stamps</h1>
+
+<p>Stamps is Stamps.com backed library for creating postage labels,
+calculate the shipping cost of packages, standardize domestic
+addresses via USPS CASS certified Address Matching Software, and track
+shipments.</p>
+
+<h2>Main Features</h2>
+
+<ol>
+<li><p>Create postage stamp labels in png and pdf formats.</p></li>
+<li><p>Standardizes shipping address that complies with the USPS address
+formatting guidelines.</p></li>
+<li><p>Validates city, state, and postal code combinations.</p></li>
+<li><p>Calculate shipping rates based on distance and package weight.</p></li>
+<li><p>Request USPS carrier pick ups.</p></li>
+<li><p>Track shipment history.</p></li>
+<li><p>Purchase postage.</p></li>
+</ol><h2>Pre-requisites</h2>
+
+<p>Register for the Stamps.com <a href="http://developer.stamps.com/developer">Developer
+Program</a> to receive a free
+test account.</p>
+
+<h2>Sample Workflow</h2>
+
+<ol>
+<li><p>Standardize Shipping Address - Ship-to addresses must be
+standardized based on USPS rules for proper address conventions before
+a shipping label can be issued.</p></li>
+<li><p>Get Rates - allow users to view and select the best shipping
+service for their needs.</p></li>
+<li><p>Generate the Shipping Label - after choosing a shipping
+service and ship-to address is standardized, the <code>Stamps.create</code> method
+will generate the indicium required to ship the item. If
+the customer changes their mind, they may want to select an option
+that initiates a <code>Stamps.cancel</code>. <code>Stamps.cancel</code> refunds postage and
+voids the shipping label.</p></li>
+<li><p>Print the Shipping Label - Call the returned URL to obtain the shipping label image.
+A URL is returned by the <code>Stamps.create</code> call in the :url item. The
+integration will connect to this URL to retrieve their shipping label
+and customs forms for printing.</p></li>
+</ol><h2>Getting Started</h2>
+
+<p>Once you have a test account with integration id, we can simple pass
+them to the configure block:</p>
+
+<pre><code># Authenticate you stamps.com credentials
+Stamps.configure do |config|
+  config.integration_id = 'XXXXXXXX-XXXX-XXXX-XXXX-XXXXXXXXXXXXX'
+  config.username       = 'STAMPS USERNAME'
+  config.password       = 'STAMPS PASSWORD'
+end
+</code></pre>
+
+<p>Now we can now be able to retrieve information about our account:</p>
+
+<pre><code>Stamps.account
+</code></pre>
+
+<h2>Standardized Shipping Address</h2>
+
+<p>Standardizes shipping address that complies with the USPS address
+formatting guidelines</p>
+
+<pre><code>standardized_address = Stamps.clean_address(
+  :address =&gt; {
+    :full_name =&gt; 'The White House',
+    :address1  =&gt; '1600 Pennsylvania Avenue, NW',
+    :city      =&gt; 'Washington',
+    :state     =&gt; 'DC',
+    :zip_code  =&gt; '20500'
+})
+</code></pre>
+
+<h2>Get Rates</h2>
+
+<p>To get a list of rates for all available USPS services based on the
+ZIP Code or the foreign country being shipped to for a given package
+weight and size.</p>
+
+<pre><code>rates = Stamps.get_rates(
+  :from_zip_code =&gt; '45440',
+  :to_zip_code   =&gt; '20500',
+  :weight_lb     =&gt; '0.5',
+  :ship_date     =&gt; '2011-04-07'
+)
+</code></pre>
+
+<h2>Creating a shipping label</h2>
+
+<p>To generate the postage based on the shipping information provided in the request.
+The <code>create!</code> method will return a URL that references either an image of the
+domestic shipping label or a multi-page PDF document for international
+labels with customs forms.</p>
+
+<pre><code>stamp = Stamps.create!(
+    :tracking_number =&gt; true,
+    :rate          =&gt; rates.first,
+    :to            =&gt; standardized_address,
+    :from =&gt; {
+      :full_name   =&gt; 'Littlelines',
+      :address1    =&gt; '50 Chestnut Street',
+      :address2    =&gt; 'Suite 234',
+      :city        =&gt; 'Beavervcreek',
+      :state       =&gt; 'OH',
+      :zip_code    =&gt; '45440'
+    },
+    :memo =&gt; 'Thanks for shopping with us!'
+)
+</code></pre>
+
+<p>Now we can view or print the postage label:</p>
+
+<pre><code>stamp.url
+</code></pre>
+
+<h2>General Configuration</h2>
+
+<p>If you want to see the data logged to and from the api:</p>
+
+<pre><code>Stamps.configure do |config|
+  config.log_messages = true
+end
+</code></pre>
+
+<p>By default Stamps will return responses as a Hash.  To make Stamps
+return a Hashie instead:</p>
+
+<pre><code>Stamps.configure do |config|
+  config.format = :hashie
+end
+</code></pre>
+
+<p>A return address can be specified in the configuration block as
+well. This address will be used when the :from address is not specified
+when creating new stamps</p>
+
+<pre><code>Stamps.configure do |config|
+  config.return_address = {
+    :full_name    =&gt; 'Littlelines',
+    :address1     =&gt; '50 Chestnut Street',
+    :address2     =&gt; 'Suite 234',
+    :city         =&gt; 'Beavercreek',
+    :state        =&gt; 'OH',
+    :zip_code     =&gt; '45440',
+    :phone_number =&gt; '9375545027'
+  }
+end
+</code></pre>
+
+<h2>Installation Steps</h2>
+
+<p>First install the gem:</p>
+
+<pre><code>gem install stamps
+</code></pre>
+
+<p>Add it to your Gemfile:</p>
+
+<pre><code>gem 'stamps'
+</code></pre>
+
+<h2>Development</h2>
+
+<ul>
+<li>Source hosted at <a href="https://github.com/mattsears/stamps">GitHub</a>.</li>
+<li>Report Issues/Questions/Feature requests on <a href="https://github.com/mattsears/stamps/issues">GitHub Issues</a>.</li>
+</ul><p>Pull requests are very welcome! Make sure your patches are well tested. Please create a topic branch for every separate change
+you make.</p>
+
+<h2>Author</h2>
+
+<p><a href="https://github.com/mattsears">Matt Sears</a></p>
+      </section>
+      <footer>
+        <p>This project is maintained by <a href="https://github.com/mattsears">mattsears</a></p>
+        <p><small>Hosted on GitHub Pages &mdash; Theme by <a href="https://github.com/orderedlist">orderedlist</a></small></p>
+      </footer>
+    </div>
+    <!--[if !IE]><script>fixScale(document);</script><!--<![endif]-->
+  </body>
+</html>
