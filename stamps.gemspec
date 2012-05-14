@@ -30,6 +30,6 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('httpi', '0.7.9')
   s.add_runtime_dependency('savon', '>= 0.8.6')
   s.add_runtime_dependency('json', '~> 1.5.1')
-  s.add_runtime_dependency('multi_json', '~> 0.0.5')
+  s.add_runtime_dependency('multi_json', '~> 1.0')
   s.add_runtime_dependency('hashie', '~> 1.0.0')
 end
