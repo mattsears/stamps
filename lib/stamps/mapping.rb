@@ -114,7 +114,11 @@ module Stamps
       # Maps :from to Address map
       def from=(val)
         # Set the defult :from address from address
-        self[:From] = Address.new(Stamps.return_address.merge!(val))
+        if Stamps.return_address
+          self[:From] = Address.new(Stamps.return_address.merge!(val))
+        else
+          self[:From] = Address.new(val)
+        end
       end
 
       # Maps :to to Address map
@@ -134,31 +138,32 @@ module Stamps
     end
 
     class Address < Hashie::Trash
-      property :FullName,     :from => :full_name
-      property :NamePrefix,   :from => :name_prefix
-      property :FirstName,    :from => :first_name
-      property :MiddleName,   :from => :middle_name
-      property :LastName,     :from => :last_name
-      property :NameSuffix,   :from => :name_suffex
-      property :Title,        :from => :title
-      property :Department,   :from => :deparartment
-      property :Company,      :from => :company
-      property :Address1,     :from => :address1
-      property :Address2,     :from => :address2
-      property :City,         :from => :city
-      property :State,        :from => :state
-      property :ZIPCode,      :from => :zip_code
-      property :ZIPCodeAddOn, :from => :zip_code_add_on
-      property :DPB,          :from => :dpb
-      property :CheckDigit,   :from => :check_digit
-      property :Province,     :from => :province
-      property :PostalCode,   :from => :postal_code
-      property :Country,      :from => :country
-      property :Urbanization, :from => :urbanization
-      property :PhoneNumber,  :from => :phone_number
-      property :Extension,    :from => :extentsion
-      property :CleanseHash,  :from => :cleanse_hash
-      property :OverrideHash, :from => :override_hash
+      property :Authenticator, :from => :authenticator
+      property :FullName,      :from => :full_name
+      property :NamePrefix,    :from => :name_prefix
+      property :FirstName,     :from => :first_name
+      property :MiddleName,    :from => :middle_name
+      property :LastName,      :from => :last_name
+      property :NameSuffix,    :from => :name_suffex
+      property :Title,         :from => :title
+      property :Department,    :from => :deparartment
+      property :Company,       :from => :company
+      property :Address1,      :from => :address1
+      property :Address2,      :from => :address2
+      property :City,          :from => :city
+      property :State,         :from => :state
+      property :ZIPCode,       :from => :zip_code
+      property :ZIPCodeAddOn,  :from => :zip_code_add_on
+      property :DPB,           :from => :dpb
+      property :CheckDigit,    :from => :check_digit
+      property :Province,      :from => :province
+      property :PostalCode,    :from => :postal_code
+      property :Country,       :from => :country
+      property :Urbanization,  :from => :urbanization
+      property :PhoneNumber,   :from => :phone_number
+      property :Extension,     :from => :extentsion
+      property :CleanseHash,   :from => :cleanse_hash
+      property :OverrideHash,  :from => :override_hash
     end
 
     class CleanseAddress < Hashie::Trash
