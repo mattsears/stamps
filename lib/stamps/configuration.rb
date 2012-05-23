@@ -21,7 +21,7 @@ module Stamps
     
     # The default namespace used on Stamps.com wsdl
     #DEFAULT_NAMESPACE = 'http://stamps.com/xml/namespace/2010/11/swsim/swsimv12'
-    DEFAULT_NAMESPACE = 'http://testing.stamps.com/xml/namespace/2010/11/swsim/swsimv12' # Test namespace
+    DEFAULT_NAMESPACE = 'https://swsim.testing.stamps.com/swsim/SwsimV22.asmx?wsdl' # Test namespace
 
     # @note JSON is preferred over XML because it is more concise and faster to parse.
     DEFAULT_FORMAT = :hash
