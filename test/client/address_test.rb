@@ -22,7 +22,7 @@ class AddressTest < Test::Unit::TestCase
       end
 
       should 'return a cleanse hash' do
-        assert 'W9pHbVsNIdYE8/B6SyQ4wOkIIr9kZWFkYmVlZg==20110713', @address[:address][:cleanse_hash]
+        assert_equal 'W9pHbVsNIdYE8/B6SyQ4wOkIIr9kZWFkYmVlZg==20110713', @address[:address][:cleanse_hash].to_s
       end
 
       should 'indicate if the address match' do
