@@ -13,7 +13,6 @@ module Stamps
         wsdl.endpoint = self.endpoint
         wsdl.namespace = self.namespace
       end
-
       response = client.request :tns, web_method do
         http.headers = { "SoapAction" => formatted_soap_action(web_method) }
         soap.namespace = 'tns'
@@ -22,6 +21,7 @@ module Stamps
         soap.namespaces["xmlns:tns"] = self.namespace
         soap.body = params.to_hash
       end
+
       Stamps::Response.new(response).to_hash
     end
 
@@ -36,14 +36,19 @@ module Stamps
     # Make Authentication request for the user
     #
     def get_authenticator_token
-      self.request('AuthenticateUser',
+      response_hash = self.request('AuthenticateUser',
         Stamps::Mapping::AuthenticateUser.new(
           :credentials => {
             :integration_id => self.integration_id,
             :username       => self.username,
             :password       => self.password
         })
-      )[:authenticate_user_response][:authenticator]
+      )
+      if response_hash[:authenticate_user_response] != nil
+        response_hash[:authenticate_user_response][:authenticator]
+      else
+        raise Stamps::InvalidIntegrationID.new(response_hash[:errors][0])
+      end
     end
 
     # Concatenates namespace and web method in a way the API can understand
