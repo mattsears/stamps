@@ -16,7 +16,11 @@ module Stamps
       'Flat Rate Envelope',
       'Flat Rate Padded Envelope',
       'Large Package',
-      'Oversized Package'].freeze
+      'Oversized Package',
+      'Regional Rate Box A',
+      'Regional Rate Box B',
+      'Legal Flat Rate Envelope',
+      'Regional Rate Box C'].freeze
 
     SERVICE = {
       'US-FC'  => 'USPS First-Class Mail',
