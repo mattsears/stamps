@@ -9,7 +9,7 @@ module Stamps
 
     # Perform an HTTP request
     def request(web_method, params, raw=false)
-      client = Savon::Client.new do |wsdl, http|
+      client = Savon.client do |wsdl, http|
         wsdl.endpoint = self.endpoint
         wsdl.namespace = self.namespace
       end

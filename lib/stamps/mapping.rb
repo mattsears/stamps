@@ -88,9 +88,11 @@ module Stamps
     class AddOnV4 < Hashie::Trash
       property :Amount,                    :from => :amount
       property :AddOnType,                 :from => :add_on_type
-      property :ProhibitedWithAnyOf,       :from => :prohibited_with_any_of
+      property :ProhibitedWithAnyOf,       :from => :prohibited_with
+      property :MissingData,               :from => :missing_data
       def prohibited_with_any_of; end
       def prohibited_with_any_of=(vals); end
+      property :RequiresAllOf,              :from => :requires_all_of
     end
 
     class Stamp < Hashie::Trash

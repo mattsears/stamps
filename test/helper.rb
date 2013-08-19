@@ -52,7 +52,3 @@ end
 def fixture(file)
   File.new(fixture_path + '/' + file)
 end
-
-Savon.configure do |config|
-  config.log = false # disable logging
-end

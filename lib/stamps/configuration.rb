@@ -17,7 +17,7 @@ module Stamps
 
     # The endpoint that will be used to connect if none is set
     DEFAULT_ENDPOINT = 'https://swsim.stamps.com/swsim/swsimv29.asmx'.freeze
-    
+
     # The default namespace used on Stamps.com wsdl
     DEFAULT_NAMESPACE = 'http://stamps.com/xml/namespace/2010/11/swsim/swsimv29'
 
@@ -46,10 +46,10 @@ module Stamps
       yield self
 
       HTTPI.log = false
-      Savon.configure do |config|
-        config.log = self.log_messages
-        config.raise_errors = self.raise_errors
-      end
+      # Savon.configure do |config|
+      #   config.log = self.log_messages
+      #   config.raise_errors = self.raise_errors
+      # end
     end
 
     # Create a hash of options and their values
