@@ -22,7 +22,7 @@ class StampsTest < Test::Unit::TestCase
       end
 
       should 'return the ship date' do
-        assert_equal '2011-04-01', @rates.first[:ship_date]
+        assert_equal Date.new(2011, 04, 01), @rates.first[:ship_date]
       end
 
     end
