@@ -35,6 +35,7 @@ end
 # Stub requests
 def stub_post(web_method, soap_action = nil)
   soap_action = web_method if soap_action.nil?
+
   stub_request(:post, Stamps.endpoint).
     with(:headers => {"SoapAction" => "#{Stamps.namespace}/#{soap_action}"}).
     to_return(:body => fixture("#{web_method}.xml"))
@@ -42,7 +43,7 @@ end
 
 def stub_response(web_method, code = 200)
   http_response = HTTPI::Response.new(code, {}, fixture("#{web_method}.xml").read)
-  Stamps::Response.new(Savon::SOAP::Response.new(http_response))
+  Stamps::Response.new(Savon::Response.new(http_response, {}, {}))
 end
 
 def fixture_path

@@ -26,13 +26,11 @@ Gem::Specification.new do |s|
   s.add_development_dependency('awesome_print')
   s.add_development_dependency('yard')
   s.add_development_dependency('bluecloth')
+  s.add_development_dependency('rake')
 
-  # We have to use savon 0.8.6 for now since newer versions of savon don't
-  # convert booleans, dates, or decimals consistently.
-  # See: https://github.com/rubiii/savon/issues/301
-  s.add_runtime_dependency('savon', '~> 2.0')
+  s.add_runtime_dependency('savon', '~> 2.3.0')
   s.add_runtime_dependency('httpi', '~> 2.1.0')
   s.add_runtime_dependency('json', '~> 1.0')
   s.add_runtime_dependency('multi_json', '~> 1.0')
-  s.add_runtime_dependency('hashie', '~> 1.0.0')
+  s.add_runtime_dependency('hashie', '~> 2.0.0')
 end

@@ -23,7 +23,8 @@ module Stamps
       self.hash.merge!(:errors => self.errors)
       self.hash.merge!(:valid? => self.valid)
       self.hash
-      Stamps.format.to_s.downcase == 'hashie' ? Hashie::Mash.new(@hash) : self.hash
+      # binding.pry
+      Stamps.format.to_s.downcase == 'hashie' ? Hashie::Trash.new(@hash) : self.hash
     end
 
     # Um, there's gotta be a better way
@@ -37,7 +38,7 @@ module Stamps
     #
     def raise_errors
       message =  'FIXME:  Need to parse http for response message'
-      return  self.format_soap_faults if savon.soap_fault.present?
+      return self.format_soap_faults if savon.soap_fault?
 
       case http.code.to_i
       when 200
@@ -62,8 +63,8 @@ module Stamps
     # Include any errors in the response
     #
     def format_soap_faults
-      fault = self.hash.delete(:fault)
-      self.errors << fault[:faultstring]
+      fault = self.hash.delete("soap:Fault") || self.hash.delete(:fault)
+      self.errors << fault["faultstring"]
       self.valid = false
     end
 

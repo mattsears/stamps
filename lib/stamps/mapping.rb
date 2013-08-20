@@ -92,7 +92,7 @@ module Stamps
       property :MissingData,               :from => :missing_data
       def prohibited_with_any_of; end
       def prohibited_with_any_of=(vals); end
-      property :RequiresAllOf,              :from => :requires_all_of
+      property :RequiresAllOf,             :from => :requires_all_of
     end
 
     class Stamp < Hashie::Trash
@@ -108,7 +108,7 @@ module Stamps
       property :ImageType,                            :from => :image_type
       property :EltronPrinterDPIType,                 :from => :label_resolution
       property :memo
-      property :recipient_email,                      :from => :recipient_email
+      property :recipient_email
       property :deliveryNotification,                 :from => :notify
       property :shipmentNotificationCC,               :from => :notify_crates
       property :shipmentNotificationFromCompany,      :from => :notify_from_company
