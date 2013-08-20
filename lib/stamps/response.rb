@@ -64,7 +64,6 @@ module Stamps
     #
     def format_soap_faults
       fault = self.hash.delete("soap:Fault") || self.hash.delete(:fault)
-      binding.pry
       self.errors << (fault[:faultstring] || fault["faultstring"])
       self.valid = false
     end
