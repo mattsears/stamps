@@ -16,141 +16,141 @@
           <ShipDate>2011-04-21</ShipDate>
           <DimWeighting>N</DimWeighting>
           <AddOns>
-            <AddOnV2>
+            <AddOnV4>
               <AddOnType>US-A-INS</AddOnType>
               <ProhibitedWithAnyOf>
-                <AddOnTypeV2>SC-A-HP</AddOnTypeV2>
-                <AddOnTypeV2>US-A-REG</AddOnTypeV2>
-                <AddOnTypeV2>US-A-CM</AddOnTypeV2>
-                <AddOnTypeV2>US-A-COD</AddOnTypeV2>
-                <AddOnTypeV2>SC-A-INS</AddOnTypeV2>
+                <AddOnTypeV4>SC-A-HP</AddOnTypeV4>
+                <AddOnTypeV4>US-A-REG</AddOnTypeV4>
+                <AddOnTypeV4>US-A-CM</AddOnTypeV4>
+                <AddOnTypeV4>US-A-COD</AddOnTypeV4>
+                <AddOnTypeV4>SC-A-INS</AddOnTypeV4>
               </ProhibitedWithAnyOf>
               <MissingData>InsuredValue</MissingData>
-            </AddOnV2>
-            <AddOnV2>
+            </AddOnV4>
+            <AddOnV4>
               <AddOnType>US-A-COD</AddOnType>
               <ProhibitedWithAnyOf>
-                <AddOnTypeV2>SC-A-HP</AddOnTypeV2>
-                <AddOnTypeV2>US-A-RRM</AddOnTypeV2>
-                <AddOnTypeV2>US-A-INS</AddOnTypeV2>
-                <AddOnTypeV2>US-A-CM</AddOnTypeV2>
+                <AddOnTypeV4>SC-A-HP</AddOnTypeV4>
+                <AddOnTypeV4>US-A-RRM</AddOnTypeV4>
+                <AddOnTypeV4>US-A-INS</AddOnTypeV4>
+                <AddOnTypeV4>US-A-CM</AddOnTypeV4>
               </ProhibitedWithAnyOf>
               <MissingData>CODValue</MissingData>
-            </AddOnV2>
-            <AddOnV2>
+            </AddOnV4>
+            <AddOnV4>
               <AddOnType>US-A-DC</AddOnType>
               <ProhibitedWithAnyOf>
-                <AddOnTypeV2>US-A-SC</AddOnTypeV2>
-                <AddOnTypeV2>US-A-CM</AddOnTypeV2>
+                <AddOnTypeV4>US-A-SC</AddOnTypeV4>
+                <AddOnTypeV4>US-A-CM</AddOnTypeV4>
               </ProhibitedWithAnyOf>
-            </AddOnV2>
-            <AddOnV2>
+            </AddOnV4>
+            <AddOnV4>
               <Amount>2.05</Amount>
               <AddOnType>US-A-SC</AddOnType>
               <ProhibitedWithAnyOf>
-                <AddOnTypeV2>US-A-DC</AddOnTypeV2>
-                <AddOnTypeV2>US-A-CM</AddOnTypeV2>
-                <AddOnTypeV2>US-A-RRM</AddOnTypeV2>
+                <AddOnTypeV4>US-A-DC</AddOnTypeV4>
+                <AddOnTypeV4>US-A-CM</AddOnTypeV4>
+                <AddOnTypeV4>US-A-RRM</AddOnTypeV4>
               </ProhibitedWithAnyOf>
-            </AddOnV2>
-            <AddOnV2>
+            </AddOnV4>
+            <AddOnV4>
               <Amount>2.85</Amount>
               <AddOnType>US-A-CM</AddOnType>
               <ProhibitedWithAnyOf>
-                <AddOnTypeV2>SC-A-HP</AddOnTypeV2>
-                <AddOnTypeV2>US-A-RRM</AddOnTypeV2>
-                <AddOnTypeV2>US-A-REG</AddOnTypeV2>
-                <AddOnTypeV2>US-A-DC</AddOnTypeV2>
-                <AddOnTypeV2>US-A-COD</AddOnTypeV2>
-                <AddOnTypeV2>US-A-SC</AddOnTypeV2>
-                <AddOnTypeV2>US-A-INS</AddOnTypeV2>
+                <AddOnTypeV4>SC-A-HP</AddOnTypeV4>
+                <AddOnTypeV4>US-A-RRM</AddOnTypeV4>
+                <AddOnTypeV4>US-A-REG</AddOnTypeV4>
+                <AddOnTypeV4>US-A-DC</AddOnTypeV4>
+                <AddOnTypeV4>US-A-COD</AddOnTypeV4>
+                <AddOnTypeV4>US-A-SC</AddOnTypeV4>
+                <AddOnTypeV4>US-A-INS</AddOnTypeV4>
               </ProhibitedWithAnyOf>
-            </AddOnV2>
-            <AddOnV2>
+            </AddOnV4>
+            <AddOnV4>
               <Amount>2.3</Amount>
               <AddOnType>US-A-RR</AddOnType>
               <RequiresAllOf>
                 <RequiresOneOf>
-                  <AddOnTypeV2>US-A-COD</AddOnTypeV2>
-                  <AddOnTypeV2>US-A-REG</AddOnTypeV2>
-                  <AddOnTypeV2>US-A-CM</AddOnTypeV2>
-                  <AddOnTypeV2>US-A-INS</AddOnTypeV2>
+                  <AddOnTypeV4>US-A-COD</AddOnTypeV4>
+                  <AddOnTypeV4>US-A-REG</AddOnTypeV4>
+                  <AddOnTypeV4>US-A-CM</AddOnTypeV4>
+                  <AddOnTypeV4>US-A-INS</AddOnTypeV4>
                 </RequiresOneOf>
               </RequiresAllOf>
               <ProhibitedWithAnyOf>
-                <AddOnTypeV2>SC-A-HP</AddOnTypeV2>
-                <AddOnTypeV2>US-A-RRM</AddOnTypeV2>
+                <AddOnTypeV4>SC-A-HP</AddOnTypeV4>
+                <AddOnTypeV4>US-A-RRM</AddOnTypeV4>
               </ProhibitedWithAnyOf>
-            </AddOnV2>
-            <AddOnV2>
+            </AddOnV4>
+            <AddOnV4>
               <Amount>10.75</Amount>
               <AddOnType>US-A-REG</AddOnType>
               <ProhibitedWithAnyOf>
-                <AddOnTypeV2>SC-A-HP</AddOnTypeV2>
-                <AddOnTypeV2>US-A-CM</AddOnTypeV2>
-                <AddOnTypeV2>US-A-INS</AddOnTypeV2>
-                <AddOnTypeV2>US-A-RRM</AddOnTypeV2>
-                <AddOnTypeV2>SC-A-INS</AddOnTypeV2>
+                <AddOnTypeV4>SC-A-HP</AddOnTypeV4>
+                <AddOnTypeV4>US-A-CM</AddOnTypeV4>
+                <AddOnTypeV4>US-A-INS</AddOnTypeV4>
+                <AddOnTypeV4>US-A-RRM</AddOnTypeV4>
+                <AddOnTypeV4>SC-A-INS</AddOnTypeV4>
               </ProhibitedWithAnyOf>
-            </AddOnV2>
-            <AddOnV2>
+            </AddOnV4>
+            <AddOnV4>
               <Amount>4.5</Amount>
               <AddOnType>US-A-RD</AddOnType>
               <RequiresAllOf>
                 <RequiresOneOf>
-                  <AddOnTypeV2>US-A-COD</AddOnTypeV2>
-                  <AddOnTypeV2>US-A-REG</AddOnTypeV2>
-                  <AddOnTypeV2>US-A-CM</AddOnTypeV2>
-                  <AddOnTypeV2>US-A-INS</AddOnTypeV2>
+                  <AddOnTypeV4>US-A-COD</AddOnTypeV4>
+                  <AddOnTypeV4>US-A-REG</AddOnTypeV4>
+                  <AddOnTypeV4>US-A-CM</AddOnTypeV4>
+                  <AddOnTypeV4>US-A-INS</AddOnTypeV4>
                 </RequiresOneOf>
               </RequiresAllOf>
               <ProhibitedWithAnyOf>
-                <AddOnTypeV2>SC-A-HP</AddOnTypeV2>
-                <AddOnTypeV2>US-A-RRM</AddOnTypeV2>
+                <AddOnTypeV4>SC-A-HP</AddOnTypeV4>
+                <AddOnTypeV4>US-A-RRM</AddOnTypeV4>
               </ProhibitedWithAnyOf>
-            </AddOnV2>
-            <AddOnV2>
+            </AddOnV4>
+            <AddOnV4>
               <AddOnType>SC-A-INS</AddOnType>
               <ProhibitedWithAnyOf>
-                <AddOnTypeV2>US-A-REG</AddOnTypeV2>
-                <AddOnTypeV2>US-A-INS</AddOnTypeV2>
+                <AddOnTypeV4>US-A-REG</AddOnTypeV4>
+                <AddOnTypeV4>US-A-INS</AddOnTypeV4>
               </ProhibitedWithAnyOf>
               <MissingData>InsuredValue</MissingData>
-            </AddOnV2>
-            <AddOnV2>
+            </AddOnV4>
+            <AddOnV4>
               <AddOnType>SC-A-HP</AddOnType>
               <ProhibitedWithAnyOf>
-                <AddOnTypeV2>US-A-RRM</AddOnTypeV2>
-                <AddOnTypeV2>US-A-INS</AddOnTypeV2>
-                <AddOnTypeV2>US-A-REG</AddOnTypeV2>
-                <AddOnTypeV2>US-A-RD</AddOnTypeV2>
-                <AddOnTypeV2>US-A-COD</AddOnTypeV2>
-                <AddOnTypeV2>US-A-CM</AddOnTypeV2>
-                <AddOnTypeV2>US-A-RR</AddOnTypeV2>
+                <AddOnTypeV4>US-A-RRM</AddOnTypeV4>
+                <AddOnTypeV4>US-A-INS</AddOnTypeV4>
+                <AddOnTypeV4>US-A-REG</AddOnTypeV4>
+                <AddOnTypeV4>US-A-RD</AddOnTypeV4>
+                <AddOnTypeV4>US-A-COD</AddOnTypeV4>
+                <AddOnTypeV4>US-A-CM</AddOnTypeV4>
+                <AddOnTypeV4>US-A-RR</AddOnTypeV4>
               </ProhibitedWithAnyOf>
-            </AddOnV2>
-            <AddOnV2>
+            </AddOnV4>
+            <AddOnV4>
               <Amount>3.9</Amount>
               <AddOnType>US-A-NND</AddOnType>
               <RequiresAllOf>
                 <RequiresOneOf>
-                  <AddOnTypeV2>US-A-COD</AddOnTypeV2>
+                  <AddOnTypeV4>US-A-COD</AddOnTypeV4>
                 </RequiresOneOf>
               </RequiresAllOf>
-            </AddOnV2>
-            <AddOnV2>
+            </AddOnV4>
+            <AddOnV4>
               <Amount>3.85</Amount>
               <AddOnType>US-A-RRM</AddOnType>
               <ProhibitedWithAnyOf>
-                <AddOnTypeV2>SC-A-HP</AddOnTypeV2>
-                <AddOnTypeV2>US-A-REG</AddOnTypeV2>
-                <AddOnTypeV2>US-A-RD</AddOnTypeV2>
-                <AddOnTypeV2>US-A-COD</AddOnTypeV2>
-                <AddOnTypeV2>US-A-SC</AddOnTypeV2>
-                <AddOnTypeV2>US-A-CM</AddOnTypeV2>
-                <AddOnTypeV2>US-A-RR</AddOnTypeV2>
+                <AddOnTypeV4>SC-A-HP</AddOnTypeV4>
+                <AddOnTypeV4>US-A-REG</AddOnTypeV4>
+                <AddOnTypeV4>US-A-RD</AddOnTypeV4>
+                <AddOnTypeV4>US-A-COD</AddOnTypeV4>
+                <AddOnTypeV4>US-A-SC</AddOnTypeV4>
+                <AddOnTypeV4>US-A-CM</AddOnTypeV4>
+                <AddOnTypeV4>US-A-RR</AddOnTypeV4>
               </ProhibitedWithAnyOf>
-            </AddOnV2>
+            </AddOnV4>
           </AddOns>
           <EffectiveWeightInOunces>8</EffectiveWeightInOunces>
           <IsIntraBMC>true</IsIntraBMC>

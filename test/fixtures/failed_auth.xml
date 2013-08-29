@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?><soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+<soap:Body>
+	<soap:Fault>
+		<faultcode>soap:Client</faultcode>
+		<faultstring>Server did not recognize the value of HTTP Header SOAPAction: http://stamps.com/xml/namespace/2013/05/swsim/swsimv26/AuthenticateUser.</faultstring>
+		<detail />
+	</soap:Fault>
+</soap:Body>
+</soap:Envelope>
+

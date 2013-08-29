@@ -7,3 +7,7 @@ pkg/*
 runner.rb
 .yardoc/*
 doc/*
+.floo
+.flooignore
+.sublime-project
+Gemfile.lock

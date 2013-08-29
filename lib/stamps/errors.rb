@@ -31,4 +31,8 @@ module Stamps
   # Raised when Stamps.com returns the HTTP status code 503
   class ServiceUnavailable < Error; end
 
+  # Raised when the get_authenticator_token returns errors
+  # See https://github.com/mattsears/stamps/issues/7
+  class InvalidIntegrationID < Error; end
+
 end
