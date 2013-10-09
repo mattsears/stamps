@@ -16,17 +16,24 @@ module Stamps
       'Flat Rate Envelope',
       'Flat Rate Padded Envelope',
       'Large Package',
-      'Oversized Package'].freeze
+      'Oversized Package',
+      'Regional Rate Box A',
+      'Regional Rate Box B',
+      'Legal Flat Rate Envelope',
+      'Regional Rate Box C'].freeze
 
     SERVICE = {
       'US-FC'  => 'USPS First-Class Mail',
       'US-MM'  => 'USPS Media Mail',
-      'US-PP'  => 'USPS Parcel Post',
       'US-PM'  => 'USPS Priority Mail',
+      'US-BP'  => 'USPS BP',
+      'US-LM'  => 'USPS LM',
       'US-XM'  => 'USPS Express Mail',
       'US-EMI' => 'USPS Express Mail International',
       'US-PMI' => 'USPS Priority Mail International',
-      'US-FCI' => 'USPS First Class Mail International'
+      'US-FCI' => 'USPS First Class Mail International',
+      'US-CM'  => 'USPS Critical Mail',
+      'US-PS'  => 'USPS Parcel Select'
     }
 
     ADD_ONS = {
@@ -46,10 +53,9 @@ module Stamps
       'US-A-RRM'   => 'Return Receipt for Merchandise',
       'US-A-SC'    => 'USPS Signature Confirmation',
       'US-A-SH'    => 'Special Handling',
-      'US-A-WDS'   => 'USPS Express - Waive Delivery Signature',
-      'US-A-NDW'   => 'Do not Deliver on Saturday',
-      'US-A-ESH'   => 'Sunday/Holiday Delivery Guaranteed',
       'US-A-NND'   => 'Notice of non-delivery',
+      'US-A-SR'    => 'Unknow Service Name SR',
+      'US-A-RRE'   => 'Unknow Service Name RRE'
     }
 
     CARRIER_PICKUP_LOCATION = {
