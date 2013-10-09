@@ -20,6 +20,14 @@ module Stamps
         response = request('PurchasePostage', Stamps::Mapping::PurchasePostage.new(params))
         response[:errors].empty? ? response[:purchase_postage_response] : response
       end
+      
+      # check the payment of purchase_pastage 
+      #
+      def get_purchase_status(params = {})
+        params[:authenticator] = authenticator_token
+        response = request('GetPurchaseStatuee', Stamps::Mapping::GetPurchaseStatus.new(params))
+        response[:errors].empty? ? response[:purchase_postage_response] : response
+      end
 
       # Request carrier pickup
       # TODO: Should this go somewhere else?

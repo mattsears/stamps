@@ -35,4 +35,5 @@ Gem::Specification.new do |s|
   s.add_runtime_dependency('json', '~> 1.0')
   s.add_runtime_dependency('multi_json', '~> 1.0')
   s.add_runtime_dependency('hashie', '~> 1.0.0')
+
 end
