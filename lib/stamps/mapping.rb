@@ -11,6 +11,7 @@ module Stamps
 
     class Account < Hashie::Trash
       property :Authenticator, :from => :authenticator
+      property :PostageBalance, :from => :postage_balance
     end
 
     class AuthenticateUser < Hashie::Trash
@@ -25,6 +26,15 @@ module Stamps
       property :IntegrationID, :from => :integration_id
       property :Username,      :from => :username
       property :Password,      :from => :password
+    end
+    
+    class PostageBalance < Hashie::Trash
+      property :AvailablePostage,  :from => :available_postage
+      property :ControlTotal,      :from => :control_total     
+    end
+    
+    class GetPostageStatus < Hashie::Trash
+      property :TransactionID, :from => :transaction_id
     end
 
     class Rates < Hashie::Trash
@@ -107,8 +117,8 @@ module Stamps
       property :SampleOnly,                           :from => :sample
       property :ImageType,                            :from => :image_type
       property :EltronPrinterDPIType,                 :from => :label_resolution
-      property :memo
-      property :recipient_email
+      property :memo                ,                 :from => :memo
+      property :recipient_email,                      :from => :recipient_email
       property :deliveryNotification,                 :from => :notify
       property :shipmentNotificationCC,               :from => :notify_crates
       property :shipmentNotificationFromCompany,      :from => :notify_from_company
@@ -183,6 +193,7 @@ module Stamps
 
     class PurchasePostage < Hashie::Trash
       property :Authenticator,  :from => :authenticator
+      property :IntegratorTxID, :from => :transaction_id
       property :PurchaseAmount, :from => :amount
       property :ControlTotal,   :from => :control_total
     end
