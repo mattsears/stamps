@@ -19,6 +19,8 @@ module Stamps
         globals.headers({ "SoapAction" => formatted_soap_action(web_method) })
         globals.element_form_default :qualified
         globals.namespace_identifier :tns
+        globals.open_timeout self.open_timeout
+        globals.read_timeout self.read_timeout
       end
 
       response = client.call(web_method, :message => params.to_hash)
