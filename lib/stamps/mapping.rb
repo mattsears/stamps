@@ -200,7 +200,7 @@ module Stamps
     
     class GetPurchaseStatus < Hashie::Trash
       property :Authenticator, :from => :authenticator
-      property :TransactionId, :from => :transaction_id
+      property :TransactionID, :from => :transaction_id
     end
 
     class CancelStamp< Hashie::Trash
