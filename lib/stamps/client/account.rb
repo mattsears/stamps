@@ -21,12 +21,12 @@ module Stamps
         response[:errors].empty? ? response[:purchase_postage_response] : response
       end
       
-      # check the payment of purchase_pastage 
+      # Check the payment of purchase_postage 
       #
       def get_purchase_status(params = {})
         params[:authenticator] = authenticator_token
-        response = request('GetPurchaseStatuee', Stamps::Mapping::GetPurchaseStatus.new(params))
-        response[:errors].empty? ? response[:purchase_postage_response] : response
+        response = request('GetPurchaseStatus', Stamps::Mapping::GetPurchaseStatus.new(params))
+        response[:errors].empty? ? response[:get_purchase_status_response] : response
       end
 
       # Request carrier pickup
