@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<soap:Envelope xmlns:soap="http://schemas.xmlsoap.org/soap/envelope/" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+  <soap:Body>
+    <GetRatesResponse xmlns="http://stamps.com/xml/namespace/2010/11/swsim/swsimv12">
+      <Authenticator>NNOUiINH+k4irLzmCD8AtTk17eA=</Authenticator>
+    </GetRatesResponse>
+  </soap:Body>
+</soap:Envelope>

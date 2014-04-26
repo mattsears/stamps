@@ -41,5 +41,19 @@ class StampsTest < Test::Unit::TestCase
         assert_equal Hash, @rate[:add_ons].class
       end
     end
+
+    context '.get_rates with no rates available' do
+      setup do
+        stub_request(:post, Stamps.endpoint).
+          with(:headers => {"SoapAction" => "#{Stamps.namespace}/GetRates"}).
+          to_return(:body => fixture("GetRatesEmpty.xml"))
+        @rates = Stamps.get_rates
+      end
+
+      should 'return an empty array' do
+        assert_equal Array, @rates.class
+        assert_empty @rates
+      end
+    end
   end
 end
