@@ -83,22 +83,30 @@ module Stamps
 
       # Maps :rate to AddOns map
       def add_ons=(addons)
-        self[:AddOns] = AddOnsArray.new(:add_on_v4 => addons[:add_on_v4])
+        self[:AddOns] = AddOnsArray.new(:add_on_v4 => addons[:add_on_v4],
+                                        :add_on_v5 => addons[:add_on_v5])
       end
     end
 
     class AddOnsArray < Hashie::Trash
       property :AddOnV4,     :from => :add_on_v4
+      property :AddOnV5,     :from => :add_on_v5
+
       def add_on_v4=(vals)
         return unless vals
-        self[:AddOnV4] = vals.map{ |value| AddOnV4.new(value).to_hash }
+        self[:AddOnV4] = vals.map{ |value| AddOn.new(value).to_hash }
+      end
+
+      def add_on_v5=(vals)
+        return unless vals
+        self[:AddOnV5] = vals.map{ |value| AddOn.new(value).to_hash }
       end
     end
 
-    class AddOnV4 < Hashie::Trash
+    class AddOn < Hashie::Trash
       property :Amount,                    :from => :amount
       property :AddOnType,                 :from => :add_on_type
-      property :ProhibitedWithAnyOf,       :from => :prohibited_with
+      property :ProhibitedWithAnyOf,       :from => :prohibited_with_any_of
       property :MissingData,               :from => :missing_data
       def prohibited_with_any_of; end
       def prohibited_with_any_of=(vals); end
