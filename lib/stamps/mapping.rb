@@ -125,8 +125,8 @@ module Stamps
       property :SampleOnly,                           :from => :sample
       property :ImageType,                            :from => :image_type
       property :EltronPrinterDPIType,                 :from => :label_resolution
-      property :memo                ,                 :from => :memo
-      property :recipient_email,                      :from => :recipient_email
+      property :memo
+      property :recipient_email
       property :deliveryNotification,                 :from => :notify
       property :shipmentNotificationCC,               :from => :notify_crates
       property :shipmentNotificationFromCompany,      :from => :notify_from_company
