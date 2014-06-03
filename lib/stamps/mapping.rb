@@ -133,6 +133,7 @@ module Stamps
       property :shipmentNotificationCompanyInSubject, :from => :notify_in_subject
       property :rotationDegrees,                      :from => :rotation
       property :printMemo,                            :from => :print_memo
+      property :ReturnImageData,                      :from => :return_image_data
 
       # Maps :from to Address map
       def from=(val)
