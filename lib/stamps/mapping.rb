@@ -56,10 +56,12 @@ module Stamps
       property :WeightOz,                :from => :weight_oz
       property :PackageType,             :from => :package_type
       property :RequiresAllOf,           :from => :requires_all
+      property :RequiresOneOf,           :from => :requires_one_of
       property :Length,                  :from => :length
       property :Width,                   :from => :width
       property :Height,                  :from => :height
       property :ShipDate,                :from => :ship_date
+      property :DeliveryDate,            :from => :delivery_date
       property :InsuredValue,            :from => :insured_value
       property :RegisteredValue,         :from => :registration_value
       property :CODValue,                :from => :cod_value
@@ -108,9 +110,23 @@ module Stamps
       property :AddOnType,                 :from => :add_on_type
       property :ProhibitedWithAnyOf,       :from => :prohibited_with_any_of
       property :MissingData,               :from => :missing_data
+      property :RequiresAllOf,             :from => :requires_all_of
       def prohibited_with_any_of; end
       def prohibited_with_any_of=(vals); end
-      property :RequiresAllOf,             :from => :requires_all_of
+      def requires_all_of=(value)
+        self[:RequiresAllOf] = RequiresAllOf.new(value)
+      end
+    end
+
+    class RequiresAllOf < Hashie::Trash
+       property :RequiresOneOf, 	:from => :requires_one_of
+      def requires_one_of=(value)
+        self[:RequiresOneOf] = RequiresOneOf.new(value)
+      end
+    end
+
+    class RequiresOneOf < Hashie::Trash
+       property :AddOnTypeV5, 	:from => :add_on_type_v5
     end
 
     class Stamp < Hashie::Trash
