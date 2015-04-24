@@ -7,6 +7,7 @@ source "http://rubygems.org"
   gem 'awesome_print'
   gem 'yard'
   gem 'bluecloth'
+  gem 'test-unit'
 
 # Specify your gem's dependencies in stamps.gemspec
 gemspec

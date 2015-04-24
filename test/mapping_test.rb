@@ -63,6 +63,17 @@ class MappingTest < Test::Unit::TestCase
           assert_equal @rate.to_hash['AddOns'], { "AddOnV5" => @expected }
         end
       end
+
+      context 'a rate with add_on_v6 add-ons' do
+        setup do
+          @params[:add_ons] = { add_on_v6: @add_ons}
+          @rate = Stamps::Mapping::Rate.new(@params)
+        end
+
+        should 'map add_ons to AddOnsV6' do
+          assert_equal @rate.to_hash['AddOns'], { "AddOnV6" => @expected }
+        end
+      end
     end
   end
 

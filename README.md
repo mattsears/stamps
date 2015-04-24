@@ -1,4 +1,4 @@
-Stamps
+Stamps [![Build Status](https://travis-ci.org/mattsears/stamps.svg?branch=master)](https://travis-ci.org/mattsears/stamps)
 ==========
 
 Stamps is Stamps.com backed library for creating postage labels,
