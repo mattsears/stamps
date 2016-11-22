@@ -25,10 +25,10 @@ module Stamps
           :rate          => Stamps::Mapping::Rate.new(params)
         })
         response = request('GetRates', rates)
-        if response[:get_rates_response].nil?
-          response
+        if response[:envelope][:body][:get_rates_response].nil?
+          response[:envelope][:body]
         else
-          response[:get_rates_response][:rates].nil? ? [] : [response[:get_rates_response][:rates][:rate]].flatten
+          response[:envelope][:body][:get_rates_response][:rates].nil? ? [] : [response[:envelope][:body][:get_rates_response][:rates][:rate]].flatten
         end
       end
 

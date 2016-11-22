@@ -12,7 +12,7 @@ module Stamps
       self.valid = true
       self.savon  = response
       self.http   = response.http
-      self.hash   = self.savon.to_hash
+      self.hash   = response.hash
       raise_errors
     end
 
@@ -63,7 +63,7 @@ module Stamps
     # Include any errors in the response
     #
     def format_soap_faults
-      fault = self.hash.delete("soap:Fault") || self.hash.delete(:fault)
+      fault = self.hash[:envelope][:body].delete("soap:Fault") || self.hash[:envelope][:body].delete(:fault)
       self.errors << (fault[:faultstring] || fault["faultstring"])
       self.valid = false
     end

@@ -13,7 +13,7 @@ module Stamps
       # In order to successfully create postage labels, the following steps
       # must happen:
       #
-      # 1. Authentiation -  identify the user and ensure that the user is
+      # 1. Authentication -  identify the user and ensure that the user is
       #    authorized to perform the operation.
       #
       # 2. CleanseAddress - Ship-to addresses must be standardized based on
@@ -28,9 +28,13 @@ module Stamps
       #
       def create!(params = {})
         params[:authenticator] = authenticator_token unless params[:authenticator]
-        params[:from] ||= Hash.new
-        response = request('CreateIndicium', Stamps::Mapping::Stamp.new(params))
-        response[:errors].empty? ? response[:create_indicium_response] : response
+        params[:from] ||= {}
+        #params[:rate].delete(:add_ons)
+        #params[:rate][:cubic_pricing] = true
+        params[:rate].delete(:delivery_date)
+        stamp = Stamps::Mapping::Stamp.new(params)
+        response = request('CreateIndicium', stamp)
+        response[:errors].empty? ? response[:envelope][:body][:create_indicium_response] : response[:envelope][:body]
       end
 
       # Refunds postage and voids the shipping label
@@ -40,7 +44,7 @@ module Stamps
       def cancel!(params = {})
         params[:authenticator] = authenticator_token unless params[:authenticator]
         response = request('CancelIndicium', Stamps::Mapping::CancelStamp.new(params))
-        response[:errors].empty? ? response[:cancel_indicium_response] : response
+        response[:errors].empty? ? response[:envelope][:body][:cancel_indicium_response] : response[:envelope][:body]
       end
 
       # Returns an array of tracking events
@@ -53,7 +57,7 @@ module Stamps
           :stamps_transaction_id => stamps_transaction_id
         }
         response = request('TrackShipment', Stamps::Mapping::TrackShipment.new(params))
-        response[:errors].empty? ? response[:track_shipment_response] : response
+        response[:errors].empty? ? response[:envelope][:body][:track_shipment_response] : response[:envelope][:body]
       end
 
     end

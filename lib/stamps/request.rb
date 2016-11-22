@@ -12,13 +12,14 @@ module Stamps
       client = Savon.client do |globals|
         globals.endpoint self.endpoint
         globals.namespace self.namespace
-        globals.namespaces("xmlns:tns" => self.namespace)
-        globals.log false
+        #globals.namespaces("xmlns:tns" => self.namespace)
+        globals.log self.log_messages
         globals.logger Logger.new(STDOUT)
-        globals.raise_errors false
+        globals.raise_errors self.raise_errors
         globals.headers({ "SoapAction" => formatted_soap_action(web_method) })
         globals.element_form_default :qualified
-        globals.namespace_identifier :tns
+        globals.namespace_identifier nil
+        globals.env_namespace :soap
         globals.open_timeout self.open_timeout
         globals.read_timeout self.read_timeout
       end
@@ -47,8 +48,9 @@ module Stamps
             :password       => self.password
         })
       )
-      if response_hash[:authenticate_user_response] != nil
-        response_hash[:authenticate_user_response][:authenticator]
+
+      if response_hash[:envelope][:body][:authenticate_user_response] != nil # response_hash[:authenticate_user_response]
+        response_hash[:envelope][:body][:authenticate_user_response][:authenticator]
       else
         raise Stamps::InvalidIntegrationID.new(response_hash[:errors][0])
       end
