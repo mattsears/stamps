@@ -80,6 +80,7 @@ module Stamps
       property :RateCategory,            :from => :rate_category
       property :ToState,                 :from => :to_state
       property :CubicPricing,            :from => :cubic_pricing
+      property :DeliveryDate,            :from => :delivery_date
 
       # Maps :rate to AddOns map
       def add_ons=(addons)

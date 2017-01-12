@@ -20,22 +20,22 @@ Gem::Specification.new do |s|
   s.require_paths = ["lib"]
 
   s.add_development_dependency('simplecov', '~> 0.4.0')
-  s.add_development_dependency('shoulda', '~> 2.11.3')
+  s.add_development_dependency 'shoulda', '~> 2.11', '>= 2.11.3'
   s.add_development_dependency('mocha', '~> 0.9.11')
-  s.add_development_dependency('webmock', '~> 1.6.2')
-  s.add_development_dependency('awesome_print')
-  s.add_development_dependency('yard')
-  s.add_development_dependency('bluecloth')
-  s.add_development_dependency('rake')
-  s.add_development_dependency('pry')
+  s.add_development_dependency 'webmock', '~> 1.6', '>= 1.6.2'
+  s.add_development_dependency 'awesome_print', '~> 0'
+  s.add_development_dependency 'yard', '~> 0'
+  s.add_development_dependency 'bluecloth', '>= 0', '~> 0'
+  s.add_development_dependency 'rake', '~> 0'
+  s.add_development_dependency 'pry', '~> 0'
 
   # We have to use savon 0.8.6 for now since newer versions of savon don't
   # convert booleans, dates, or decimals consistently.
   # See: https://github.com/rubiii/savon/issues/301
-  s.add_runtime_dependency('savon', '~> 2.3.0')
-  s.add_runtime_dependency('httpi', '~> 2.1.0')
+  #
+  s.add_runtime_dependency 'savon', '~> 2.3', '>= 2.3.0' 
+  s.add_runtime_dependency 'httpi', '~> 2.1', '>= 2.1.0'
   s.add_runtime_dependency('json', '~> 1.0')
   s.add_runtime_dependency('multi_json', '~> 1.0')
-  s.add_runtime_dependency('hashie', '~> 1.0.0')
-
+  s.add_runtime_dependency 'hashie', '~> 1.2', '>= 1.2.0'
 end
